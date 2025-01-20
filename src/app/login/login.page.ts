@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  email: string = '';
+  password: string = '';
+
+  constructor(private navCtrl: NavController, private toastController: ToastController
+  ) { }
 
   ngOnInit() {
+  }
+
+  login() {
+    if (this.email === 'gael.diaz@gmail.com' && this.password === 'ale2207') {
+      this.navCtrl.navigateRoot('/inicio');
+    }
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom') {
+    const toast = await this.toastController.create({
+      message: 'Credenciales de acceso incorrectas',
+      duration: 5000,
+      position: position,
+      color: 'warning'
+    });
+
+    await toast.present();
   }
 
 }

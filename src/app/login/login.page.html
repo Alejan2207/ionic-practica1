@@ -18,12 +18,14 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-input label="Correo" type="email" placeholder="email@gmail.com"></ion-input>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input [(ngModel)]="email" type="email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input label="Contraseña" type="password"></ion-input>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
       </ion-item>
-      <ion-button routerLink="/inicio">Iniciar sesión</ion-button>
+      <ion-button (click)="login()" expand="block" (click)="presentToast('bottom')">Iniciar sesión</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
