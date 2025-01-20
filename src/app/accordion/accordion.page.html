@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/inicio"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Accordion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">accordion</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="medium">
+        <ion-label>¿Cómo puedo registrarme?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content"> Para registrarte, solo necesitas ingresar tu correo electrónico y crear una contraseña.</div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>¿Cómo puedo recuperar mi contraseña?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Haz clic en "Olvidé mi contraseña" en la pantalla de inicio de sesión y sigue las instrucciones que recibirás en tu correo electrónico.</div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="danger">
+        <ion-label>¿Necesitas ayuda?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Consulta nuestro Centro de Ayuda</div>
+    </ion-accordion>
+  </ion-accordion-group>
+  </ion-card>
+
+  <ion-card>
+  <ion-accordion-group [multiple]="true" [value]="['first', 'third']">
+    <ion-accordion value="first">
+      <ion-item slot="header" color="dark">
+        <ion-label>Nombre</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Gael Alejandro</div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="sucess">
+        <ion-label>Apellido</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Cordova Diaz</div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="secondary">
+        <ion-label>Edad</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">19 años</div>
+    </ion-accordion>
+  </ion-accordion-group>
+  </ion-card>
+
+  <ion-card>
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="warning">
+        <ion-label>First Accordion</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">First Content</div>
+    </ion-accordion>
+    <ion-accordion value="second" [disabled]="true">
+      <ion-item slot="header" color="tertiary">
+        <ion-label>Second Accordion (Disabled)</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Second Content</div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="medium">
+        <ion-label>Third Accordion</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Third Content</div>
+    </ion-accordion>
+  </ion-accordion-group>
+  </ion-card>
+
+</ion-content>
