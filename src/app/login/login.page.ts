@@ -19,8 +19,10 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    if (this.email === 'gael.diaz@gmail.com' && this.password === 'ale2207') {
+    if (this.email === 'gael.diaz@gmail.com' && this.password === '12345') {
       this.navCtrl.navigateRoot('/inicio');
+    }else{
+      this.presentToast('bottom');
     }
   }
 

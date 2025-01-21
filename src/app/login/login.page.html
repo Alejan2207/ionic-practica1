@@ -18,14 +18,28 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-label position="floating">Correo</ion-label>
-        <ion-input [(ngModel)]="email" type="email"></ion-input>
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-input 
+              type="email"
+              label="Correo Electronico"
+              labelPlacement="floating"
+              placeholder="Correo Electronico" 
+              errorText="Ingrese un correo electronico valido"
+              [(ngModel)]="email"
+              email
+              name="email"
+              required>
+            </ion-input>
       </ion-item>
       <ion-item>
+        <ion-icon name="lock-closed" slot="start"></ion-icon>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input [(ngModel)]="password" type="password"></ion-input>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>  
       </ion-item>
-      <ion-button (click)="login()" expand="block" (click)="presentToast('bottom')">Iniciar sesión</ion-button>
+      <ion-button (click)="login()" expand="block">Iniciar sesión</ion-button>
+      <ion-text>
+        <p>¿No tienes una cuenta? <a routerLink="/register">Registrarme</a></p>
+      </ion-text>
     </ion-card-content>
   </ion-card>
 </ion-content>
